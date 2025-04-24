@@ -20,7 +20,7 @@ connectDB()
 // const allowedOrigins = ["http://localhost:5173"];
 
 app.use(cors({
-    origin: 'https://fin-track-frontend-murex.vercel.app', 
+    origin: 'fin-frontend-seven.vercel.app', 
     credentials: true, 
 }));
 
@@ -61,7 +61,7 @@ passport.use(
     }),
     (req, res) => {
       // Successful authentication, redirect or send token
-     res.redirect(`https://fin-track-frontend-murex.vercel.app/login`);
+     res.redirect(`fin-frontend-seven.vercel.app/login`);
     }
   );
 app.use(router)
