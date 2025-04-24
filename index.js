@@ -20,7 +20,8 @@ connectDB()
 
 app.use(cors({
     origin: '*', 
-    credentials: true, 
+    credentials: true,
+    optionsSuccessStatus:200,
 }));
 
 app.use(cookieParser())
