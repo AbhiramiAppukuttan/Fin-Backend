@@ -19,7 +19,7 @@ const app = express();
 connectDB()
 
 app.use(cors({
-    origin: 'https://fin-frontend-seven.vercel.app', 
+    origin: '*', 
     credentials: true, 
 }));
 
