@@ -17,10 +17,9 @@ const router = require("./routes");
 const app = express();
 
 connectDB()
-// const allowedOrigins = ["http://localhost:5173"];
 
 app.use(cors({
-    origin: 'fin-frontend-seven.vercel.app', 
+    origin: 'https://fin-frontend-seven.vercel.app', 
     credentials: true, 
 }));
 
@@ -61,7 +60,7 @@ passport.use(
     }),
     (req, res) => {
       // Successful authentication, redirect or send token
-     res.redirect(`fin-frontend-seven.vercel.app/login`);
+     res.redirect(`https://fin-frontend-seven.vercel.app/login`);
     }
   );
 app.use(router)
