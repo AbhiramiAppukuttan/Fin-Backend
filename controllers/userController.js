@@ -212,7 +212,7 @@ const userController = {
 
     // Only allow currency conversion if user is Premium
     if (currencyChanged && user.plan === 'premium') {
-        const rate = await getExchangeRate(oldCurrency || "USD", currencyPreference);
+        const rate = await getExchangeRate(oldCurrency || "INR", currencyPreference);
         console.log(rate);
         
         if (!rate) return res.status(500).json({ message: "Currency conversion failed" });
