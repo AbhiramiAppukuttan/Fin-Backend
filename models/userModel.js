@@ -56,7 +56,9 @@ const mongoose = require("mongoose");
 }
    });
  
-//  const User = mongoose.model("User", UserSchema);
  const User = mongoose.models.User || mongoose.model("User", UserSchema);
  
  module.exports = User;
+
+
+ //  const User = mongoose.model("User", UserSchema);

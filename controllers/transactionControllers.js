@@ -20,6 +20,8 @@ const Savings = require("../models/savingModel");
      addTransaction: asyncHandler(async (req, res) => {
          const { type, amount, category, date, description, isRecurring, recurrenceInterval, savings_goal } = req.body;
          const userId = req.user.id;
+         console.log( isRecurring, recurrenceInterval);
+         
          if (!amount || !category || !date || !type) {
              throw new Error("Amount, category, date, and type are required.");
          }
@@ -60,6 +62,7 @@ const Savings = require("../models/savingModel");
              recurrenceInterval: isRecurring ? recurrenceInterval : null,
              nextDueDate,
          });
+ console.log(transaction);
  
          if (req.file) {
              transaction.receiptUrl = req.file.path;
