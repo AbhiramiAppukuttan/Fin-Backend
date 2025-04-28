@@ -160,7 +160,7 @@ const userController = {
             return res.status(401).json({ message: "Incorrect password" });
         }
         const role=user.role
-        const payload = { email: user.email, id: user.id, plan:user.plan };
+        const payload = { email: user.email, id: user.id, plan:user.plan,role:user.role };
         const token = jwt.sign(payload, process.env.JWT_SECRET_KEY, { expiresIn: "2d" });
         res.json({ token,role });
 
