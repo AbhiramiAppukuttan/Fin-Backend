@@ -50,6 +50,7 @@ const Savings = require("../models/savingModel");
                      throw new Error("Invalid recurrence interval.");
              }
          }
+ console.log(nextDueDate);
  
          const transaction = new Transaction({
              user: userId,
