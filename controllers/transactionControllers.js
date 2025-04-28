@@ -26,9 +26,6 @@ const Savings = require("../models/savingModel");
              throw new Error("Amount, category, date, and type are required.");
          }
          const user=await User.findById(userId)
-         if(!user.verified){
-             throw new Error("User not verified")
-         }
          await checkSubscription(user, isRecurring ? "recurring" : "transaction");
          let nextDueDate = null;
          if (isRecurring && recurrenceInterval) {
